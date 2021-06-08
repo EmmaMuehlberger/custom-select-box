@@ -1,0 +1,95 @@
+.custom-select-container,
+.custom-select-value,
+.custom-select-options,
+.custom-select-option {
+    box-sizing: border-box;
+}
+
+.custom-select-container {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select-value {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    border: 1px solid #000000;
+    padding: 8px 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-select-value::after {
+    content: "";
+    display: inline-block;
+    border: 5px solid transparent;
+    border-top-color: #000000;
+    border-bottom-color: transparent;
+    margin-left: 12px;
+    margin-top: 4px;
+}
+
+.custom-select-container:focus .custom-select-value {
+    border: 2px solid rgba(39, 77, 160, 0.6);
+}
+
+.custom-select-container:focus .custom-select-value::after {
+    border-top-color: transparent;
+    border-bottom-color: #000000;
+    margin-top: -4px;
+}
+
+.custom-select-options {
+    display: none;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    border: 2px solid rgba(39, 77, 160, 0.6);
+    width: 100%;
+    border-top: none;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.custom-select-options.show {
+    display: block;
+}
+
+.custom-select-option {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.custom-select-option.selected {
+    background: rgba(39, 77, 160, 0.6);
+}
+
+.custom-select-option:hover {
+    background: rgba(39, 77, 160, 0.2);
+}
+
+/* The following styles are only for the demo and can be removed */
+
+@import url('https://fonts.googleapis.com/css2?family=B612:wght@400;700&display=swap');
+
+* {
+    font-family: 'B612', sans-serif;
+    font-size: 20px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 10vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 15px;
+    font-weight: 700;
+}
